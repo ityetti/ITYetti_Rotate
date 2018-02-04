@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * ITYetti Rotate View
+ *
+ * @author Borovik Alexey
+ * @category ITYetti
+ * @package ITYetti_Rotate
+ * @copyright Copyright (c) 2018 ITYetti (https://github.com/ityetti)
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <tabs>
+        <ityetti translate="label" module="ityetti_rotate">
+            <label>ITYetti Extensions</label>
+            <sort_order>1</sort_order>
+        </ityetti>
+    </tabs>
+    <sections>
+        <ityetti translate="label" module="ityetti_rotate">
+            <label>Rotate View 360</label>
+            <tab>ityetti</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+
+            <groups>
+                <ityetti_group translate="label" module="ityetti_rotate">
+                    <label>General options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1000</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+
+                    <fields>
+                        <ityetti_enable translate="label">
+                            <label>Enable module:</label>
+                            <comment>Select "Yes" if you want to enable the module</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </ityetti_enable>
+                        <ityetti_width translate="label">
+                            <label>Width:</label>
+                            <comment>The width of the image</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ityetti_width>
+                        <ityetti_height translate="label">
+                            <label>Height:</label>
+                            <comment>The height of the image</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ityetti_height>
+                        <ityetti_frame_time translate="label">
+                            <label>Frame Time:</label>
+                            <comment>Time in ms between updates. 40 is exactly 25 FPS</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ityetti_frame_time>
+                        <ityetti_frames translate="label">
+                            <label>Frames:</label>
+                            <comment>Total number of frames</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </ityetti_frames>
+                    </fields>
+                </ityetti_group>
+            </groups>
+        </ityetti>
+    </sections>
+</config>

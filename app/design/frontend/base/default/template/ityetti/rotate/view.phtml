@@ -1,0 +1,103 @@
+<?php
+/**
+ * ITYetti Rotate View
+ *
+ * @author Borovik Alexey
+ * @category ITYetti
+ * @package ITYetti_Rotate
+ * @copyright Copyright (c) 2018 ITYetti (https://github.com/ityetti)
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+?>
+<?php /* Get System Configuration */; ?>
+<?php $storeId = Mage::app()->getStore()->getId(); ?>
+<?php $configWidth = Mage::helper('ityetti_rotate/config')->getImageWidth($storeId); ?>
+<?php $configHeight = Mage::helper('ityetti_rotate/config')->getImageHeight($storeId); ?>
+<?php $configFrameTime = Mage::helper('ityetti_rotate/config')->getFrameRates($storeId); ?>
+<?php $configFrames = Mage::helper('ityetti_rotate/config')->getFrames($storeId); ?>
+
+<?php /* Get Media Images from product */; ?>
+<?php $galleryImages = Mage::getSingleton('catalog/product')
+    ->load(Mage::registry('current_product')->getId())
+    ->getData('media_gallery'); ?>
+
+<?php foreach ($galleryImages['images'] as $image): ?>
+    <?php /* Get all media images where selected rotate checkbox */; ?>
+    <?php if ($image['rotate']): ?>
+        <?php $items[] = Mage::helper('ityetti_rotate/config')->urlPathForRotateImage() . $image['file']; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+<?php /* Sort images by name (lowest to highest) */; ?>
+<?php sort($items); ?>
+<?php foreach ($items as $item): ?>
+    <?php /* Creating the right format for js libraries */; ?>
+    <?php $sorted_items[] = "\"$item\"" . ', '; ?>
+<?php endforeach; ?>
+
+<?php if (Mage::helper('ityetti_rotate/config')->isEnabled() && count($sorted_items) > 0): ?>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            var spin = jQuery('.rotate-view');
+            var api;
+
+            spin.spritespin({
+                source: [
+                    <?php foreach ($sorted_items as $sorted_item): ?>
+                    <?php echo $sorted_item; ?>
+                    <?php endforeach; ?>
+                ],
+                width: <?php echo $configWidth ? $configWidth : '480'; ?>,
+                height: <?php echo $configHeight ? $configHeight : '325'; ?>,
+                frameTime: <?php echo $configFrameTime ? $configFrameTime : '40' ?>,
+                frames: <?php echo $configFrames ? $configFrames : '34' ?>
+            });
+
+            api = spin.spritespin("api");
+
+            // Open rotate view in fancybox
+            jQuery('.rotate-button').fancybox();
+
+            // button jumping to previous frame
+            jQuery(".left-button").click(function () {
+                api.stopAnimation();
+                api.prevFrame();
+            });
+
+            // button to start the animation
+            jQuery(".play-button").click(function () {
+                api.startAnimation();
+            });
+
+            // button to stop the animation and return to first frame
+            jQuery(".stop-button").click(function () {
+                jQuery(".rotate-view").spritespin("frame", 0);
+                api.stopAnimation();
+            });
+
+            // button to pause the animation
+            jQuery(".pause-button").click(function () {
+                api.toggleAnimation();
+                api.stopAnimation();
+            });
+
+            // button jumping to next frame
+            jQuery(".right-button").click(function () {
+                api.stopAnimation();
+                api.nextFrame();
+            });
+        });
+    </script>
+
+    <a class="rotate-button" href="#rotate">360</a>
+    <div class="rotate" id="rotate" style="display: none;" ">
+    <div class="rotate-view"></div>
+    <div class="buttons">
+        <div class="left-button"></div>
+        <div class="play-button"></div>
+        <div class="pause-button"></div>
+        <div class="stop-button"></div>
+        <div class="right-button"></div>
+    </div>
+    </div>
+<?php endif; ?>

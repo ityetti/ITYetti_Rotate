@@ -1,0 +1,45 @@
+.left-button, .pause-button, .play-button, .right-button, .stop-button{
+    background: url(../images/sprites.png) no-repeat;
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.left-button{
+    background-position: 0 0;
+}
+
+.pause-button{
+    background-position: -30px 0;
+}
+
+.play-button{
+    background-position: -60px 0;
+}
+
+.right-button{
+    background-position: -90px 0;
+}
+
+.stop-button{
+    background-position: -120px 0;
+}
+
+.rotate-button{
+    background: url(../images/rotate-view.png) no-repeat scroll 0 0 transparent;
+    background-size: 64px 48px;
+    height: 48px;
+    width: 64px;
+    overflow: hidden;
+    position: absolute;
+    margin: 10px;
+    text-indent: -9999px;
+    cursor: pointer;
+    z-index: 10;
+}
+.buttons{
+    text-align: center;
+    width: 160px;
+    margin: 0 auto;
+}

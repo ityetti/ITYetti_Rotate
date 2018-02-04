@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * ITYetti Rotate View
+ *
+ * @author Borovik Alexey
+ * @category ITYetti
+ * @package ITYetti_Rotate
+ * @copyright Copyright (c) 2018 ITYetti (https://github.com/ityetti)
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <modules>
+        <ITYetti_Rotate>
+            <version>1.0.0</version>
+        </ITYetti_Rotate>
+    </modules>
+    <global>
+        <resources>
+            <rotate_setup>
+                <setup>
+                    <module>ITYetti_Rotate</module>
+                </setup>
+            </rotate_setup>
+        </resources>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product_attribute_backend_media>ITYetti_Rotate_Model_Product_Attribute_Backend_Media</product_attribute_backend_media>
+                </rewrite>
+            </catalog>
+            <catalog_resource>
+                <rewrite>
+                    <product_attribute_backend_media>ITYetti_Rotate_Model_Resource_Product_Attribute_Backend_Media</product_attribute_backend_media>
+                </rewrite>
+            </catalog_resource>
+        </models>
+        <helpers>
+            <ityetti_rotate>
+                <class>ITYetti_Rotate_Helper</class>
+            </ityetti_rotate>
+        </helpers>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <ityetti_rotate module="ITYetti_Rotate">
+                    <file>ityetti_rotate.xml</file>
+                </ityetti_rotate>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ityetti_rotate>
+                    <file>ityetti_rotate.xml</file>
+                </ityetti_rotate>
+            </updates>
+        </layout>
+    </adminhtml>
+    <default>
+        <ityetti>
+            <ityetti_group>
+                <ityetti_width>480</ityetti_width>
+                <ityetti_height>325</ityetti_height>
+                <ityetti_frame_time>40</ityetti_frame_time>
+                <ityetti_frames>34</ityetti_frames>
+            </ityetti_group>
+        </ityetti>
+    </default>
+</config>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ITYetti Rotate View
+ *
+ * @author Borovik Alexey
+ * @category ITYetti
+ * @package ITYetti_Rotate
+ * @copyright Copyright (c) 2018 ITYetti (https://github.com/ityetti)
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <ityetti>
+                                        <title>ITYetti - All</title>
+                                    </ityetti>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
