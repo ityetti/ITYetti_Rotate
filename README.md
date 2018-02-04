@@ -6,7 +6,7 @@ Facts
 -----
 - version: 1.0.0
 - extension key: ITYetti_Rotate
-- [extension on GitHub](https://github.com/ityetti/rotate-view)
+- [extension on GitHub](https://github.com/ityetti/ITYetti_Rotate)
 
 Description
 -----------
@@ -37,11 +37,11 @@ Uninstallation
 
 Support
 -------
-If you have any issues with this extension, open an issue on [GitHub](https://github.com/ityetti/rotate-view/issues).
+If you have any issues with this extension, open an issue on [GitHub](https://github.com/ityetti/ITYetti_Rotate/issues).
 
 Contribution
 ------------
-Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://github.com/ityetti/rotate-view/pulls).
+Any contribution is highly appreciated. The best way to contribute code is to open a [pull request on GitHub](https://github.com/ityetti/ITYetti_Rotate/pulls).
 
 Developer
 ---------
