@@ -59,3 +59,11 @@ Credits
 Copyright
 ---------
 (c) 2018 ITYetti
+
+Buzzwords
+---------
+- Magento
+- Rotate View
+- 360 Views
+- Panorama Views
+- Touch Support
