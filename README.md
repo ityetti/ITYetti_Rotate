@@ -18,14 +18,18 @@ Requirements
 
 Compatibility
 -------------
-- Magento >= 1.9
+- Magento = 1.9.3.7 (Should work on previous versions. Not tested)
 
 Installation Instructions
 -------------------------
 1. Copy all the files into your document root.
 2. Clear the cache, logout from the admin panel and then login again.
 3. Configure and activate the extension under System - Configuration - ITYetti Extensions - Rotate View 360.
-4. Enable extension and configure images size and frames.
+4. Choose some product under Catalog - Manage Products.
+5. Open Images tab.
+6. Upload your photos for rotate 360 view and select all in 'rotate' cell.
+7. Images should be called image1.jpg, image2.jpg etc.
+8. After that check your frontend.
 
 Uninstallation
 --------------
